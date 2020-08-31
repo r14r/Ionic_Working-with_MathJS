@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Mathematics with math.js
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let t of samples">
+        <ion-card-header>
+            <ion-card-title>{{ t.desc }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <!-- <p>{{ t.desc }}</p> -->
+            <ion-item *ngFor="let d of t.data">
+                <ion-label>{{ showdesc(d.txt, d.val) }}</ion-label>
+                <ion-label>{{ calculate(t.type, d.val) }}</ion-label>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>
